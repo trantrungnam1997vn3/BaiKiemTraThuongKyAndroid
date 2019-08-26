@@ -9,9 +9,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnTinhTong;
+    private Button btnTinhTong, btnTinhHieu;
     private EditText inputX, inputY;
-    private TextView textKetQua;
+    private TextView textKetQua, textHieu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,5 +33,16 @@ public class MainActivity extends AppCompatActivity {
         textKetQua.setText("Tổng là: " + ketqua);
 
 
+    }
+
+    public void tinhHieu(View view) {
+        inputX = (EditText) findViewById(R.id.inputX);
+        inputY = (EditText) findViewById(R.id.inputY);
+        int x = Integer.parseInt(inputX.getText().toString());
+        int y = Integer.parseInt(inputY.getText().toString());
+        int ketqua = x - y;
+
+        textHieu = (TextView) findViewById(R.id.textHieu);
+        textHieu.setText("Hiệu là: " + ketqua);
     }
 }
